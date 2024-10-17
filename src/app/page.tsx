@@ -16,7 +16,7 @@ export default async function Home() {
         <h1 className='text-4xl sm:text-6xl md:text-8xl font-[family-name:var(--font-blackcasper)]'>
           <span className='text-purple-600'>Bla</span>
           <span className='text-purple-500'>zArD</span>
-          <span className='text-purple-400'>sky's</span>
+          <span className='text-purple-400'>sky&apos;s</span>
           {' '}
           <span className='text-yellow-600'>SpaCE</span>
         </h1>

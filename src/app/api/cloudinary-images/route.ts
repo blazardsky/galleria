@@ -7,7 +7,7 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-export async function GET(request: any) {
+export async function GET() {
   try {
     const { resources } = await cloudinary.v2.search
       .expression('resource_type:image AND -folder:brains')
