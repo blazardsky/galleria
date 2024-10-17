@@ -8,7 +8,7 @@ import { cn } from '../lib/utils';
 const GalleryImage = ({data}: {data: ImageProps}) => {
 
   const [inViewRef, isFullyInView] = useInView({
-    threshold: 1
+    threshold: 0.98
   });
 
   return (

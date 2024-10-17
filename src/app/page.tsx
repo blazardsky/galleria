@@ -4,11 +4,11 @@ import GalleryImage from './components/GalleryImage';
 
 export default async function Home() {
 
-  const response = await fetch('/api/cloudinary-images');
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  const data: ImageProps[] = await response.json();
+  // const response = await fetch('/api/cloudinary-images/');
+  // if (!response.ok) {
+  //   throw new Error(`HTTP error! status: ${response.status}`);
+  // }
+  // const data: ImageProps[] = await response.json();
 
   return (
     <div className="h-full p-4 pb-20 flex flex-col gap-24 sm:p-20 font-[family-name:var(--font-geist-mono)] snap-y snap-mandatory">
@@ -22,11 +22,11 @@ export default async function Home() {
         </h1>
         <p className='mt-4'>Digital Illustrations / Graphics</p>
       </header>
-      <main className="h-screen snap-center snap-always">
+      {/* <main className="h-screen snap-center snap-always">
         <div className='snap-mandatory snap-x gap-24 place-center grid grid-flow-col overflow-auto'>
           {data.map( res => <GalleryImage key={res.asset_id} data={res} />)}
         </div>
-      </main>
+      </main> */}
       <footer className="snap-center mt-20 flex gap-1 flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
