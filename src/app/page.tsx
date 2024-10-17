@@ -4,7 +4,7 @@ import GalleryImage from './components/GalleryImage';
 
 export default async function Home() {
 
-  const response = await fetch('http://localhost:3000/api/cloudinary-images');
+  const response = await fetch('/api/cloudinary-images');
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
