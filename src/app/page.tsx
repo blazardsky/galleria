@@ -1,6 +1,6 @@
 import React from 'react';
-import { ImageProps } from './types';
-import GalleryImage from './components/GalleryImage';
+// import { ImageProps } from './types';
+// import GalleryImage from './components/GalleryImage';
 
 export default async function Home() {
 
