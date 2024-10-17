@@ -1,0 +1,3 @@
+Built by: Niccolò Agnoletti
+With: Next JS / Tailwind CSS
+Hosted on: Cloudinary / Vercel
