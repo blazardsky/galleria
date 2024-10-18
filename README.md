@@ -1,7 +1,7 @@
 ## "Galleria"
 A gallery with my latest illustration and design works. *work in progress*
 
-(visit the gallery)[https://blazardsky.space]
+[visit the gallery](https://blazardsky.space)
 
 
 ### Tech stack
