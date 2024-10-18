@@ -8,7 +8,7 @@ import { cn } from '../lib/utils';
 const GalleryImage = ({data, index}: {data: ReducedImageProps, index: number}) => {
 
   const [inViewRef, isFullyInView] = useInView({
-    threshold: 0.98
+    threshold: 0.9
   });
 
   return (
@@ -25,7 +25,7 @@ const GalleryImage = ({data, index}: {data: ReducedImageProps, index: number}) =
       placeholder='blur'
       blurDataURL={data.blurDataUrl}
       className={cn(
-        "first:ml-[25vw] last:mr-[25vw] w-auto h-auto md:min-h-[70vh] max-w-[calc(100vw-5rem)] max-h-[calc(100svh-4rem)] snap-center my-auto transition-opacity ease-out duration-300",
+        "first:ml-[25vw] last:mr-[25vw] w-auto h-auto md:min-h-[70vh] max-w-[calc(100vw-5rem)] sm:max-w-[calc(100vw-8rem)] max-h-[calc(100svh-4rem)] snap-center my-auto transition-opacity ease-out duration-300",
         !isFullyInView && "opacity-10 brightness-110"
       )}
     />
