@@ -37,3 +37,7 @@ export interface ImageProps {
     context_updated_at?: string
   }
 }
+
+export type ReducedImageProps = {
+  blurDataUrl: string
+} & Pick<ImageProps, 'asset_id'|'public_id'|'format'|'secure_url'|'width'|'height'|'aspect_ratio'>

@@ -1,6 +1,7 @@
 import React from 'react';
-import { ImageProps } from '../types';
-import GalleryImage from '../components/GalleryImage';
+import type { ImageProps, ReducedImageProps } from '@/types';
+import GalleryImage from '@/components/GalleryImage';
+import { getPlaceholderBlurData } from '@/lib/utils';
 
 export default async function Home() {
 
@@ -8,7 +9,30 @@ export default async function Home() {
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  const data: ImageProps[] = await response.json();
+
+  const gallery: ImageProps[] = await response.json();
+  let reducedGallery: ReducedImageProps[] = [];
+
+  const blurImagePromises = gallery.map((image: ImageProps) => {
+    return getPlaceholderBlurData(image);
+  });
+  const imagesWithBlurDataUrls = await Promise.all(blurImagePromises);
+  
+  let i = 0;
+  for (let image of gallery) {
+    reducedGallery.push({
+      asset_id: image.asset_id,
+      height: image.height,
+      width: image.width,
+      public_id: image.public_id,
+      format: image.format,
+      aspect_ratio: image.aspect_ratio,
+      secure_url: image.secure_url,
+      blurDataUrl: imagesWithBlurDataUrls[i]
+    });
+    i++;
+  }
+
 
   return (
     <div className="h-full p-4 pb-20 flex flex-col gap-24 sm:p-20 font-[family-name:var(--font-geist-mono)] snap-y snap-mandatory">
@@ -24,7 +48,7 @@ export default async function Home() {
       </header>
       <main className="h-screen snap-center snap-always">
         <div className='snap-mandatory snap-x gap-24 place-center grid grid-flow-col overflow-auto'>
-          {data.map( res => <GalleryImage key={res.asset_id} data={res} />)}
+          {reducedGallery.map( (data, index) => <GalleryImage index={index} key={data.asset_id} data={data} />)}
         </div>
       </main>
       <footer className="snap-center mt-20 flex gap-1 flex-wrap items-center justify-center">

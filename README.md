@@ -10,11 +10,13 @@ React
 Cloudinary
 Tailwind
 
-based on create-next-app starter template
+based on create-next-app starter template and next-with-cloudinary template
 
 
 ### TODO
-- add more images
-- add pagination
-- add filters (tags?)
-- improve accessibility
+- [x] add blurplaceholder images
+- [ ] add more images
+- [ ] improve accessibility
+- [ ] add pagination
+- [ ] add filters (tags?)
+- [ ] add imagemin/imagminjpegtran ?
