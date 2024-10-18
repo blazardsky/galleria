@@ -35,7 +35,7 @@ export default async function Home() {
 
 
   return (
-    <div className="h-full p-4 pb-20 flex flex-col gap-24 sm:p-20 font-[family-name:var(--font-geist-mono)] snap-y snap-mandatory">
+    <div className="h-full p-4 pb-20 flex flex-col gap-24 sm:p-16 font-[family-name:var(--font-geist-mono)] snap-y snap-mandatory">
       <header className='mb-2 snap-center text-center portrait:h-[50svh] landscape:h-[75svh] flex flex-col justify-center'>
         <h1 className='text-4xl sm:text-6xl md:text-8xl font-[family-name:var(--font-blackcasper)]'>
           <span className='text-purple-600'>Bla</span>
