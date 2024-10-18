@@ -11,7 +11,7 @@ export default async function Home() {
   }
 
   const gallery: ImageProps[] = await response.json();
-  let reducedGallery: ReducedImageProps[] = [];
+  const reducedGallery: ReducedImageProps[] = [];
 
   const blurImagePromises = gallery.map((image: ImageProps) => {
     return getPlaceholderBlurData(image);
@@ -19,7 +19,7 @@ export default async function Home() {
   const imagesWithBlurDataUrls = await Promise.all(blurImagePromises);
   
   let i = 0;
-  for (let image of gallery) {
+  for (const image of gallery) {
     reducedGallery.push({
       asset_id: image.asset_id,
       height: image.height,
