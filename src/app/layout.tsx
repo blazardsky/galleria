@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Galleria",
-  description: "Gallery with my latest works in illustration and design",
+  description: "Gallery with my latest illustrations and digital artworks.",
 };
 
 export default function RootLayout({
@@ -25,6 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="author" content="Niccolò Agnoletti" />
+      <meta name="keywords" content="digital art, illustrations, graphics, gallery, blazardsky, niccolò agnoletti" />
+      
+
       <body
         className={`${blackCasper.variable} ${geistMono.variable} antialiased  snap-mandatory snap-y`}
       >

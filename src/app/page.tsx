@@ -58,19 +58,11 @@ export default async function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          by Niccolò Agnoletti
+          by Niccolò Agnoletti © 2019-2025 Tutti i diritti riservati
         </a>
         <span>
           - IT02487460517 - 
         </span>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://shop.kipoproduzioni.it/?utm_source=nic"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Kìpo Shop
-        </a>
       </footer>
     </div>
   );
