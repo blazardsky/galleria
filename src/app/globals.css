@@ -23,7 +23,13 @@ body {
 }
 
 body:has( .gallery_visible) {
-  background: #000;
+  --background: #000000;
+  --foreground: #CCCCCC;
+}
+
+main {
+  background: var(--background);
+  transition: background 0.8s ease-in-out;
 }
 
 @layer utilities {
