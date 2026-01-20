@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #171717;
     --foreground: #ededed;
   }
 }
@@ -18,6 +18,12 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Arial, Helvetica, sans-serif;
+  scroll-behaviour: smooth;
+  transition: background 0.8s ease-in-out;
+}
+
+body:has( .gallery_visible) {
+  background: #000;
 }
 
 @layer utilities {

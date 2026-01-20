@@ -11,6 +11,7 @@ const GalleryImage = ({data, index}: {data: ReducedImageProps, index: number}) =
     threshold: 0.9
   });
 
+
   return (
     <Image
       width={data.width}
@@ -25,7 +26,7 @@ const GalleryImage = ({data, index}: {data: ReducedImageProps, index: number}) =
       placeholder='blur'
       blurDataURL={data.blurDataUrl}
       className={cn(
-        "first:ml-[25vw] last:mr-[25vw] w-auto h-auto portrait:md:min-h-[70vh] max-w-[calc(100vw-5rem)] sm:max-w-[calc(100vw-8rem)] max-h-[calc(100svh-4rem)] snap-center my-auto transition-opacity ease-out duration-300",
+        "w-auto h-auto mx-auto portrait:md:min-h-[70vh] max-w-[calc(100vw-5rem)] sm:max-w-[calc(100vw-8rem)] max-h-[calc(100svh-4rem)] transition-opacity ease-out duration-300",
         !isFullyInView && "opacity-10 brightness-110"
       )}
     />

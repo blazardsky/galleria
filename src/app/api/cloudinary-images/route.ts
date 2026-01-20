@@ -10,7 +10,7 @@ cloudinary.v2.config({
 export async function GET() {
   try {
     const { resources } = await cloudinary.v2.search
-      .expression('resource_type:image AND -folder:brains')
+      .expression('resource_type:image AND folder:gallery-watermarked')
       .sort_by("public_id", "desc")
       .max_results(50)
       .execute();
