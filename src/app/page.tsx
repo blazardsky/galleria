@@ -33,16 +33,18 @@ export default async function Home() {
         <GalleryWrapper />
       </main>
 
-      <footer className="h-auto snap-start pt-20 text-sm">
+      <footer className="h-auto snap-start pt-20 text-sm text-center">
         <span className="opacity-60">by</span>
+        {' '}
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          className="inline hover:underline hover:underline-offset-4"
           href="https://nicc-olo.com/?utm_source=blazardsky-gallery"
           target="_blank"
           rel="noopener noreferrer"
         >
           Niccolò Agnoletti
         </a>
+        {' '}
         <span className="opacity-60">
           © 2019-2026 All rights reserved - IT02487460517. (This website does
           not use cookies.)

@@ -66,3 +66,11 @@
     clip-path: inset(0.6px);
   }
 }
+
+
+/* left arrow mobile positioning */
+@media (max-width: 768px) {
+  .left-prev {
+    left: calc(100% - 8rem);
+  }
+}

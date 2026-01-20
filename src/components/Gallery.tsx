@@ -62,8 +62,8 @@ export default function Gallery({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious ref={prevRef} className="@max-md:right-[calc(100% - 5rem)] @max-md:top-full" />
-      <CarouselNext ref={nextRef} className="@max-md:right-0 @max-md:top-full" />
+      <CarouselPrevious ref={prevRef} />
+      <CarouselNext ref={nextRef} />
     </Carousel>
   );
 }
