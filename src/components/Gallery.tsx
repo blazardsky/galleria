@@ -24,19 +24,22 @@ export default function Gallery({
   const prevRef = React.useRef<HTMLButtonElement>(null);
 
   React.useEffect(() => {
+    let lastPressed = 0;
     const handleKeyDown = (event: KeyboardEvent) => {
+      const now = Date.now();
+      if (now - lastPressed < 100) return;
+      lastPressed = now;
       if (event.key === "ArrowLeft") {
         prevRef.current?.click();
       } else if (event.key === "ArrowRight") {
         nextRef.current?.click();
       }
     };
-    
     window.addEventListener("keydown", handleKeyDown);
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [nextRef, prevRef]);
 
   return (
     <Carousel
