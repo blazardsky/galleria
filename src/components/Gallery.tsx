@@ -20,26 +20,6 @@ export default function Gallery({
   const [inViewRef, isFullyInView] = useInView({
     threshold: 0.8,
   });
-  const nextRef = React.useRef<HTMLButtonElement>(null);
-  const prevRef = React.useRef<HTMLButtonElement>(null);
-
-  React.useEffect(() => {
-    let lastPressed = 0;
-    const handleKeyDown = (event: KeyboardEvent) => {
-      const now = Date.now();
-      if (now - lastPressed < 100) return;
-      lastPressed = now;
-      if (event.key === "ArrowLeft") {
-        prevRef.current?.click();
-      } else if (event.key === "ArrowRight") {
-        nextRef.current?.click();
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [nextRef, prevRef]);
 
   return (
     <Carousel
@@ -62,8 +42,8 @@ export default function Gallery({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious ref={prevRef} />
-      <CarouselNext ref={nextRef} />
+      <CarouselPrevious />
+      <CarouselNext />
     </Carousel>
   );
 }
