@@ -1,5 +1,3 @@
-import React from 'react';
-import Gallery from '@/components/Gallery';
 import GalleryWrapper from '@/components/GalleryWrapper';
 
 export default async function Home() {
@@ -14,9 +12,9 @@ export default async function Home() {
 
   return (
     <div className="p-4 pb-20 sm:p-16 font-(family-name:--font-geist-mono) snap-y snap-proximity">
-      <header className="snap-center snap-normal text-center grid justify-items-center items-end h-[90svh]">
+      <header className="snap-center snap-normal text-center grid justify-items-center items-end min-h-[30vh]">
         <section className="mb-2 text-center">
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-(family-name:--font-blackcasper)">
+          <h1 className="text-lg sm:text-2xl md:text-4xl font-(family-name:--font-blackcasper)">
             <span className="text-purple-600">Bla</span>
             <span className="text-purple-500">zArD</span>
             <span className="text-purple-400">sky&apos;s</span>{" "}

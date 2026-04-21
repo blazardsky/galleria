@@ -4,7 +4,7 @@ import Gallery from './Gallery';
 
 export default async function GalleryWrapper() {
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/cloudinary-images/`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000'}/api/cloudinary-images/`);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }

@@ -1,5 +1,4 @@
 "use client"
-import React from 'react'
 import Image from 'next/image'
 import { useInView } from "react-intersection-observer";
 import type { ReducedImageProps } from '../types';
@@ -11,8 +10,12 @@ const GalleryImage = ({data, index}: {data: ReducedImageProps, index: number}) =
     threshold: 0.9
   });
 
-
   return (
+    <figure 
+    className={cn(
+      "relative mx-auto block w-fit h-fit",
+      isFullyInView && "bg-neutral-100 border-16 border-taupe-800 inset-shadow-sm inset-shadow-mist-600 p-4 md:p-8 lg:p-16",
+      isFullyInView && "after:absolute after:top-0 after:left-0 after:block after:w-full after:h-full after:border-16 after:border-double after:border-taupe-400")}>
     <Image
       width={data.width}
       height={data.height}
@@ -26,10 +29,14 @@ const GalleryImage = ({data, index}: {data: ReducedImageProps, index: number}) =
       placeholder='blur'
       blurDataURL={data.blurDataUrl}
       className={cn(
-        "w-auto h-auto mx-auto portrait:md:min-h-[70vh] max-w-[calc(100vw-5rem)] sm:max-w-[calc(100vw-8rem)] max-h-[calc(100svh-4rem)] transition-opacity ease-out duration-300",
-        !isFullyInView && "opacity-10 brightness-110"
+        "mx-auto transition-all ease-out duration-600 motion-reduce:duration-0",
+        "w-full h-auto max-h-[70svh]",
+        !isFullyInView && "motion-safe:opacity-5 brightness-110",
+        isFullyInView && "border border-mist-200 inset-shadow-xs inset-shadow-mist-300"
+        
       )}
     />
+    </figure>
   )
 }
 
