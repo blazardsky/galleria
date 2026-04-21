@@ -1,15 +1,10 @@
 import type { ImageProps, ReducedImageProps } from '@/types';
+import { getCloudinaryGalleryImages } from '@/lib/cloudinary-gallery';
 import { getPlaceholderBlurData } from '@/lib/utils';
 import Gallery from './Gallery';
 
 export default async function GalleryWrapper() {
-
-  const response = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000'}/api/cloudinary-images/`);
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-
-  const gallery: ImageProps[] = await response.json();
+  const gallery = await getCloudinaryGalleryImages();
   const reducedGallery: ReducedImageProps[] = [];
 
   const blurImagePromises = gallery.map((image: ImageProps) => {
